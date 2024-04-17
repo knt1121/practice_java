@@ -24,7 +24,7 @@ public class Chapter3_1 {
         System.out.println("nameはKK、ageは26、weightは50です");
         System.out.println("name + age + weightの値は" + name + age + weight);
         System.out.println("age + name + weightの値は" + age + name + weight);
-        System.out.println("age + weight + nameの値は" + age + weight + name);//なぜ76KKにならない？
+        System.out.println("age + weight + nameの値は" + (age + weight + name));
         System.out.println("name + (age + weight)の値は" + name + (age + weight));
 
         //インクリメントとデクリメント
@@ -69,12 +69,26 @@ public class Chapter3_1 {
         //インクリメントと論理演算子についてここまでの知識で練習（頭の整理）
         int e = 10; int f = 10; int g = 10; int h = 10;
         System.out.println("int e = 10; int f = 10; int g = 10; int h = 10");
+        boolean result = e++ > 10 & ++f > 10;
         System.out.println("boolean result = e++ > 10 & ++f > 10");
         System.out.println("問1 : 上記のresultの値は何でしょうか。");
         System.out.println("問2 : 変数eとfの値はそれぞれ何でしょうか。");
-
+        //問1：resultの値はfalse。
+        //問2：変数eの値は11、変数fの値も11。
+        /*理由：[e++ > 10]は比較([10 > 10]はfalse)後にインクリメント処理(10+1)がされるためfalse。[e]の値は11。
+          この時点でresultの値はfalseで確定するが、[&]だと後ろの式も評価されるため[f]もインクリメント処理されて11となる。
+        */
+        boolean result2 = g++ > 10 && ++h > 10;
         System.out.println("boolean result2 = g++ > 10 && ++h > 10");
         System.out.println("問1 : 上記のresult2の値は何でしょうか。");
         System.out.println("問2 : 変数gとhの値はそれぞれ何でしょうか。なぜそうなるか。");
+        //問1：result2の値はfalse。
+        //問2：変数eの値は11、変数hの値は10となる。
+        /*理由：[g++ > 10]は比較([10 > 10]はfalse)後にインクリメント処理(10+1)がされるためfalse。[g]の値は11。
+          この時点でresultの値はfalseで確定し、[&&]だと後ろの式は評価されないため[h]はインクリメント処理されず10となる。
+        */
+        /*答え合わせ
+        System.out.println("eの値は" + e + "fの値は" + f + "gの値は" + g + "hの値は" + h );
+        */
     }
 }

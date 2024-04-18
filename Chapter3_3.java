@@ -17,5 +17,14 @@ public class Chapter3_3 {
         System.out.println("n5 == 'a' : " + ( n5 == 'a' ));
         System.out.println("n6 == n7 : " + ( n6 == n7 ));
         System.out.println("n8 == true : " + ( n8 == true ));
+
+        //==演算子による参照型データの比較
+        int[] a1 = {10}; int[] a2 = {10};
+        System.out.println(" a1 == a2 : " + ( a1 == a2 ));
+        //a1とa2は異なるデータを参照している。配列は参照型
+
+        int[] a3 = {10}; int[] a4 = a3;
+        System.out.println(" a3 == a4 : " + ( a3 == a4 ));
+        //a3とa4は同じデータを参照している。a4の参照先はa3と同じ。
     }
 }

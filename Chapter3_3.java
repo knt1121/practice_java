@@ -26,5 +26,9 @@ public class Chapter3_3 {
         int[] a3 = {10}; int[] a4 = a3;
         System.out.println(" a3 == a4 : " + ( a3 == a4 ));
         //a3とa4は同じデータを参照している。a4の参照先はa3と同じ。
+
+        //==演算子による参照型データの比較の際、参照先が同じかどうかではなく、
+        //参照している文字列が同じかどうかを比較する場合はequals()メソッドを使用する。
+        System.out.println("a1.equals(a2)" + a1.equals(a2));//なぜfalseが返ってくる？
     }
 }
